@@ -9,7 +9,8 @@
      - [В чем ее новаторство?](#Вчемееноваторство?)
      - [Какие получились результаты?](#Какиеполучилисьрезультаты?)
 - [Практическая часть](#Практическаячасть)
-     - [Результаты с картинками](#Результатыскартинками)
+     - [Промежуточные результаты с картинками](#Промежуточныерезультатыскартинками)
+     - [Конечные результаты с картинками](#Конечныерезультатыскартинками)
      - [Наблюдения](#Наблюдения)
      - [... и проблемы](#проблемы)
 - [Запуск](#Запуск)
@@ -22,7 +23,11 @@
 [Оглавление](#Оглавление)
 <a name="Почемунадэтимработают?"></a>
 ### Почему над этим работают?
-Это уникальное решение. Уже существуют нейронные сети, которые позволяют генерировать изображения по текстовому описанию, но это всегда будут разные объекты. Например, если попросить изобразить собаку конкретной породы, в конкретной позе на фоне эйфелевой башни - это всегда будут разные собаки. Представленное решение способно на основе 3-5 фотографий одной собаки генерировать изображения с ней в разных контекстов с сохранением отличительных черт и естественности. Современные модели не могут точно реконструировать внешний вид заданных предметов, а лишь создают вариации содержания изображения.  
+Это уникальное решение.  
+Уже существуют нейронные сети, которые позволяют генерировать изображения по текстовому описанию, но это всегда будут разные объекты. Например, если попросить изобразить собаку конкретной породы, в конкретной позе на фоне эйфелевой башни - это всегда будут разные собаки. Представленное решение способно на основе 3-5 фотографий одной собаки генерировать изображения с ней в разных контекстов с сохранением отличительных черт и естественности.  
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/79bb83f9-f24f-4506-9762-efa5beb25c34)
+  
+Современные модели не могут точно реконструировать внешний вид заданных предметов, а лишь создают вариации содержания изображения.  
 [Оглавление](#Оглавление)
 <a name="Какформулируетсязадача?"></a>
 ### Как формулируется задача?
@@ -35,6 +40,8 @@
 <a name="Вчемееноваторство?"></a>
 ### В чем ее новаторство?
 Это иновационное решение, которое позволяет решить новую сложную задачу генерации изображений на основе субъекта. Для предотвращения явления, при котором модель ассоциирует название класса с конкретным экземпляром, предлагается использовать автогенную функцию потерь. Также данный подход позволяет решать множество новых задач: реконтекстуализацию, художественную рендеризацию, синтез новых представлений, модификацию свойств.  
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/2d41f718-a001-4153-bb5b-16c2648c7f3e)
+  
 [Оглавление](#Оглавление)
 <a name="Какиеполучилисьрезультаты?"></a>
 ### Какие получились результаты?
@@ -42,13 +49,13 @@
 [Оглавление](#Оглавление)
 <a name="Практическаячасть"></a>
 ## Практическая часть
-<a name="Результатыскартинками"></a>
-### Результаты с картинками
-В процессе работы получилось дообучить модель на небольшом домене из 10 картинок с героем Cinnamonroll. Примеры картинок:  
-![ad83a44ef00c2a538ab0c4c8594703c2](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/346379a9-9b78-496f-ab99-44f160bbb635)
-![68d3b63a3fcc590ac994505472f4f5e0](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/52dc5969-60b1-4580-b637-f5116a0f8046)  
-  
-Было решено (частично методом проб и ошибок, частично логически) увеличить количество эпох до 500 и изменить batch size на 10, learning rate для энкодера = 5e-5, random seed = 40. В качестве INFERENCE_PROMPT для тестирования использовалась фраза "cinnamoroll a toy". Получился следующий результат:  
+<a name="Промежуточныерезультатыскартинками"></a>
+### Промежуточные результаты с картинками
+В процессе работы получилось дообучить модель на небольшом домене из 10 картинок с героем Cinnamonroll 512x512 пикселей. Примеры картинок:  
+<img src="https://user-images.githubusercontent.com/55783463/264398227-f035bb43-9bb9-4ee0-b0c6-f0f63bc26480.png" width="256" height="256" title="Github Logo">
+<img src="https://user-images.githubusercontent.com/55783463/264429121-f7628fe1-644c-4dd4-8525-df22f7078221.jpg" width="256" height="256" title="Github Logo">
+
+Изначально было решено увеличить количество эпох до 500 и изменить batch size на 10, learning rate для энкодера = 5e-5, learning rate для unet = 3e-4, random seed = 40. В качестве INFERENCE_PROMPT для тестирования использовалась фраза "cinnamoroll a toy". Получился следующий результат:  
 ![загруженное (16)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/5fee849f-3bba-4701-af94-650d4bb974a3)
 ![загруженное (4)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/dda15d97-eded-492a-ba5e-d17d7ee84b43)    
 Для "cinnamoroll ridding a bycicle" получаются пугающие огромные зайцы на настоящих велосипедах, не как на картинке из обучающего набора:  
@@ -67,15 +74,65 @@
 Для "art of cooking cinnamoroll" получается такой mood ▓▒░(°◡°)░▒▓:  
 ![загруженное (3)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/7e0f3311-80ae-4f1b-9bcd-beecdd320f50)    
     
-При меньшем количестве эпох получались совсем невнятные изображения, например при epoch = 300, batch size = 1, learning rate для энкодера = 1e-4, prompt = 'cinnamoroll a toy':  
+При меньшем количестве эпох получались совсем невнятные изображения, например при epoch = 300, batch size = 1, learning rate для энкодера = 1e-5, learning rate для unet = 3e-4, random seed = 40, prompt = 'cinnamoroll a toy':  
 ![загруженное](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/27d3cc75-a605-428b-b15d-6286f4328f62)    
-Или другой пример epoch = 300, batch size = 1, learning rate для энкодера = 1e-4, prompt = 'crochet toy cinnamoroll':  
+Или другой пример epoch = 300, batch size = 1, learning rate для энкодера = 1e-5, learning rate для unet = 3e-4, random seed = 40, prompt = 'crochet toy cinnamoroll':  
 ![загруженное (8)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/a138f58c-ab8e-4f99-aba3-7754b208addb)  
+[Оглавление](#Оглавление)  
+<a name="Конечныерезультатыскартинками"></a>
+### Конечные результаты с картинками
+При epoch = 500, batch size = 1 (т.к. картинок и так мало и если брать 10 то значения просто будут усредняться), learning rate для энкодера = 1e-5, learning rate для unet = 3e-4, seed = 123.  
+prompt = 'cinnamoroll a toy', guidance = 13, LORA_SCALE_UNET = 0.5, LORA_SCALE_TEXT_ENCODER = 0.1  
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/122f0f3e-73fb-4d20-82f3-1585ec48cb0f)
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/5ed8d6dc-4d4e-4c0a-9dff-a5e24d7bb570)
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/ab03be00-066a-429a-afb2-184736efae3b)
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/19086ad6-d914-4beb-841e-4f171bb39d86)
+
+prompt = 'crochet toy cinnamoroll', guidance = 11, LORA_SCALE_UNET = 0.5, LORA_SCALE_TEXT_ENCODER = 0.1 (очень много неудачных вариантов):
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/c350eaf3-402a-4a3f-a2e3-56db75b28938)
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/fbd65aa2-0dfa-419c-b567-c00315e636d5)
+
+prompt = 'cinnamoroll eat strawberry', guidance = 11.8, LORA_SCALE_UNET = 0.5, LORA_SCALE_TEXT_ENCODER = 0.1:
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/aa71b88b-ad53-42c0-b7c5-c95c53eeff14)
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/d4f5f2d8-9f19-4a0a-a632-b79fd3da5e76)
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/ba5b24c3-8602-4bd0-9191-00b30b3f62a1)
+
+prompt = 'cup with printed cinnamoroll', guidance = 11.8, LORA_SCALE_UNET = 0.5, LORA_SCALE_TEXT_ENCODER = 0.1:
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/c417e3dd-b019-4b13-a294-e7242a728211)
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/3190339f-1aad-4381-b6d4-77b5932b6fe4)
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/74990133-8bb6-42b2-994c-8eae811c6873)
+
+Решила проверить есть ли зависимость от порядка слов, prompt = 'cinnamoroll printed on cup', guidance = 11.8, LORA_SCALE_UNET = 0.5, LORA_SCALE_TEXT_ENCODER = 0.1:
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/a803159e-167b-47c9-8146-cf17a00c422a)
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/da8bb6cb-e177-4a87-b003-eb9d80c2700a)
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/bd069753-bb85-4229-8bc8-6ef9d5b0ae29)
+
+prompt = 'cinnamoroll ridding bicycle', guidance = 13.8, LORA_SCALE_UNET = 0.8, LORA_SCALE_TEXT_ENCODER = 0.2
+Ожидание(из датасета):  
+![5](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/aaf41ab6-1142-464d-b86c-f156e5a2a1dd)
+Реальность:  
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/756f6c88-cc91-471b-b597-4d7f03eacde7)
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/6e5c07d6-cec6-4e77-a323-542648948a91)
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/86d9aad9-2a35-4005-8b63-d2838b125f99)
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/6d691497-2cd6-4ad7-af15-da6eb183f201)
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/34bb2b24-0b0b-4599-87c8-9563ae2a60d6)
+
+prompt = 'black colored cinnamoroll', guidance = 9, LORA_SCALE_UNET = 0.9, LORA_SCALE_TEXT_ENCODER = 0.1
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/0d55bca9-5f26-4c48-8c13-82a7857d0f3a)
+prompt = 'black colored cinnamoroll', guidance = 13.2, LORA_SCALE_UNET = 0.9, LORA_SCALE_TEXT_ENCODER = 0.1
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/57e82a53-9eec-4a5c-befb-65eec8fdb3ba)
+
+Сколько бы я ни пыталась у меня не получилось изобразить prompt = 'cinnamoroll with a green frog shaped cap on head', guidance = 13.8, LORA_SCALE_UNET = 0.8, LORA_SCALE_TEXT_ENCODER = 0.5  
+Ожидание(из датасета):  
+![3](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/ffb16f26-b582-436c-93ef-3ecab79e182b)  
+Реальность:  
+![image](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/f7ea372c-e8d2-49ed-bad4-b3096f4e947b)  
+
   [Оглавление](#Оглавление)
 <a name="Наблюдения"></a>
 ### Наблюдения
 - Самые лучшие изображения получаются с какими то простыми объектами, например с кружками.
-- Сеть выдает более правдивые(если так можно судить) результаты, если выкрутить GUIDANCE на 9-12.
+- Сеть выдает более правдивые(если так можно судить) результаты, если выкрутить GUIDANCE на 9-15.
 - При большем количестве эпох результаты не становятся сильно лучше, чем при 500, если увеличивать learning rate, то само собой результаты ухудшаются.
 - Решила посмотреть, как дообучают модель другие люди, в случае добавления текстовых файлов с ключевыми словами результаты генерации оказываются лучше.  
 [Оглавление](#Оглавление)
