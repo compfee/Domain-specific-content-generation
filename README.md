@@ -15,36 +15,35 @@
 ## Практическая часть
 В процессе работы получилось дообучить модель на небольшом домене из 10 картинок с героем Cinnamonroll. Примеры картинок:  
 ![ad83a44ef00c2a538ab0c4c8594703c2](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/346379a9-9b78-496f-ab99-44f160bbb635)
-![6aed125d4ddecd005e67a4bd414d3307](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/9c0fa63b-1d5c-43a3-88fc-173df73e9276)
 ![68d3b63a3fcc590ac994505472f4f5e0](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/52dc5969-60b1-4580-b637-f5116a0f8046)  
-
+  
 Было решено (частично методом проб и ошибок, частично логически) увеличить количество эпох до 500 и изменить batch size на 10, learning rate для энкодера = 5e-5, random seed = 40.  
 В качестве INFERENCE_PROMPT для тестирования использовалась фраза "cinnamoroll a toy". Получился следующий результат:  
 ![загруженное (16)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/5fee849f-3bba-4701-af94-650d4bb974a3)
-![загруженное (4)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/dda15d97-eded-492a-ba5e-d17d7ee84b43)  
+![загруженное (4)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/dda15d97-eded-492a-ba5e-d17d7ee84b43)    
 Для "cinnamoroll ridding a bycicle" получаются пугающие огромные зайцы на настоящих велосипедах, не как на картинке из обучающего набора:  
 ![загруженное (15)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/f547699e-b4e6-4692-b35d-a9a287953727)
-![загруженное (14)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/b05f0857-05b6-41c2-b7c3-fab90a47dbff)  
+![загруженное (14)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/b05f0857-05b6-41c2-b7c3-fab90a47dbff)    
 Для "crochet toy cinnamoroll" получаются лунтики:  
 ![загруженное (5)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/e3d9c4a0-95e0-4338-adbd-a14510261fb9)
 ![загруженное (9)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/2121eda3-7d01-4b24-9aa8-cb2cc3154e78)
-![загруженное (13)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/a70ea377-f1bf-49fa-90eb-dab510c49c70)  
+![загруженное (13)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/a70ea377-f1bf-49fa-90eb-dab510c49c70)    
 Для "cup with printed cinnamoroll" самые красивые изображения:  
 ![загруженное (2)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/f9d2301b-c6c7-4a32-848b-b54320e9617a)
-![загруженное (1)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/1ee545e9-d14c-4348-a53e-a5bbfe361e8c)  
+![загруженное (1)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/1ee545e9-d14c-4348-a53e-a5bbfe361e8c)    
 Для "art of cinnamoroll eating strawberry" тоже лунтики:  
 ![загруженное (7)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/7d15432e-54e7-46ac-8f1d-132126601362)
-![загруженное (6)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/e69911c4-92b4-4477-a1a2-ef0dc56a169b)  
+![загруженное (6)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/e69911c4-92b4-4477-a1a2-ef0dc56a169b)    
 Для "art of cooking cinnamoroll":  
-![загруженное (3)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/7e0f3311-80ae-4f1b-9bcd-beecdd320f50)  
+![загруженное (3)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/7e0f3311-80ae-4f1b-9bcd-beecdd320f50)    
 А если просто попросить изобразить "cinnamoroll" получается это:  
-![загруженное](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/2e2c8064-c9f4-447b-b89c-31c2721db18d)  
-
+![загруженное](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/2e2c8064-c9f4-447b-b89c-31c2721db18d)    
+    
 При меньшем количестве эпох получались совсем невнятные изображения, например при epoch = 300, batch size = 1, learning rate для энкодера = 1e-4, prompt = 'cinnamoroll a toy':  
-![загруженное](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/27d3cc75-a605-428b-b15d-6286f4328f62)  
+![загруженное](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/27d3cc75-a605-428b-b15d-6286f4328f62)    
 Или другой пример epoch = 300, batch size = 1, learning rate для энкодера = 1e-4, prompt = 'crochet toy cinnamoroll':  
 ![загруженное (8)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/a138f58c-ab8e-4f99-aba3-7754b208addb)  
-  
+      
 Также было замечено, что сеть выдает более похожие результаты, если выкрутить GUIDANCE на 9.  
 При большем количестве эпох результаты не становятся сильно лучше, чем при 500, если увеличивать learning rate, то само собой результаты ухудшаются.  
 В самом начале я столкнулась с ошибкой при запуске обучения:  
