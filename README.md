@@ -36,8 +36,6 @@
 ![загруженное (6)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/e69911c4-92b4-4477-a1a2-ef0dc56a169b)    
 Для "art of cooking cinnamoroll" получается такой mood ▓▒░(°◡°)░▒▓:  
 ![загруженное (3)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/7e0f3311-80ae-4f1b-9bcd-beecdd320f50)    
-А если просто попросить изобразить "cinnamoroll" получается это:  
-![загруженное](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/2e2c8064-c9f4-447b-b89c-31c2721db18d)    
     
 При меньшем количестве эпох получались совсем невнятные изображения, например при epoch = 300, batch size = 1, learning rate для энкодера = 1e-4, prompt = 'cinnamoroll a toy':  
 ![загруженное](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/27d3cc75-a605-428b-b15d-6286f4328f62)    
