@@ -15,7 +15,9 @@
 ## Практическая часть
 В процессе работы получилось дообучить модель на небольшом домене из 10 картинок с героем Cinnamonroll. Примеры картинок:  
 ![ad83a44ef00c2a538ab0c4c8594703c2](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/346379a9-9b78-496f-ab99-44f160bbb635)
-![6aed125d4ddecd005e67a4bd414d3307](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/9c0fa63b-1d5c-43a3-88fc-173df73e9276)  
+![6aed125d4ddecd005e67a4bd414d3307](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/9c0fa63b-1d5c-43a3-88fc-173df73e9276)
+![68d3b63a3fcc590ac994505472f4f5e0](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/52dc5969-60b1-4580-b637-f5116a0f8046)  
+
 Было решено (частично методом проб и ошибок, частично логически) увеличить количество эпох до 500 и изменить batch size на 10, learning rate для энкодера = 5e-5, random seed = 40.  
 В качестве INFERENCE_PROMPT для тестирования использовалась фраза "cinnamoroll a toy". Получился следующий результат:  
 ![загруженное (16)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/5fee849f-3bba-4701-af94-650d4bb974a3)
