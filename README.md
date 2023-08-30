@@ -147,7 +147,7 @@ prompt = 'cup with printed cinnamoroll', guidance = 11.8, LORA_SCALE_UNET = 0.5,
      <img src="https://user-images.githubusercontent.com/55783463/264428760-bd069753-bb85-4229-8bc8-6ef9d5b0ae29.png" width="256" height="256">
 </p>  
 
-prompt = 'cinnamoroll ridding bicycle', guidance = 13.8, LORA_SCALE_UNET = 0.8, LORA_SCALE_TEXT_ENCODER = 0.2.  
+prompt = 'cinnamoroll ridding bicycle', guidance = 13.8, LORA_SCALE_UNET = 0.8, LORA_SCALE_TEXT_ENCODER = 0.2. Результаты получились намного лучше, чем были изначально.  
 Ожидание(из датасета):  
 
 <p align="center">
