@@ -34,7 +34,7 @@
 Для "art of cinnamoroll eating strawberry" тоже лунтики:  
 ![загруженное (7)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/7d15432e-54e7-46ac-8f1d-132126601362)
 ![загруженное (6)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/e69911c4-92b4-4477-a1a2-ef0dc56a169b)    
-Для "art of cooking cinnamoroll":  
+Для "art of cooking cinnamoroll" получается такой mood ▓▒░(°◡°)░▒▓:  
 ![загруженное (3)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/7e0f3311-80ae-4f1b-9bcd-beecdd320f50)    
 А если просто попросить изобразить "cinnamoroll" получается это:  
 ![загруженное](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/2e2c8064-c9f4-447b-b89c-31c2721db18d)    
