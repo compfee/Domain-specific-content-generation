@@ -28,7 +28,7 @@
 ![загруженное (5)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/e3d9c4a0-95e0-4338-adbd-a14510261fb9)
 ![загруженное (9)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/2121eda3-7d01-4b24-9aa8-cb2cc3154e78)
 ![загруженное (13)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/a70ea377-f1bf-49fa-90eb-dab510c49c70)    
-Для "cup with printed cinnamoroll" самые красивые изображения:  
+Для "cup with printed cinnamoroll" самые красивые изображения(я бы хотела такую кружку):  
 ![загруженное (2)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/f9d2301b-c6c7-4a32-848b-b54320e9617a)
 ![загруженное (1)](https://github.com/compfee/Domain-specific-content-generation/assets/55783463/1ee545e9-d14c-4348-a53e-a5bbfe361e8c)    
 Для "art of cinnamoroll eating strawberry" тоже лунтики:  
